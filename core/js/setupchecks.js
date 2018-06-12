@@ -198,6 +198,22 @@
 							type: OC.SetupChecks.MESSAGE_TYPE_INFO
 						})
 					}
+					if (data.isSqliteUsed) {
+						messages.push({
+							msg: t(
+								'core',
+								'SQLite is currently being used as the backend database. For larger installations we recommend that you switch to a different database backend.'
+							) + ' ' + t('core', 'This is particularly recommended when using the desktop client for file synchronisation.') + ' ' +
+							t(
+								'core',
+								'To migrate to another database use the command line tool: \'occ db:convert-type\', or see the <a target="_blank" rel="noreferrer noopener" href="{docLink}">documentation ↗</a>.',
+								{
+									docLink: data.databaseConversionDocumentation,
+								}
+							),
+							type: OC.SetupChecks.MESSAGE_TYPE_WARNING
+						})
+					}
 				} else {
 					messages.push({
 						msg: t('core', 'Error occurred while checking server setup'),

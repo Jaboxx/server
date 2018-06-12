@@ -133,7 +133,6 @@ class ManagerTest extends TestCase {
 			45 => [new Section('encryption', 'Encryption', 0, '3')],
 			55 => [\OC::$server->query(\OCA\WorkflowEngine\Settings\Section::class)],
 			98 => [new Section('additional', 'Additional settings', 0, '1')],
-			99 => [new Section('tips-tricks', 'Tips & tricks', 0, '4')],
 		], $this->manager->getAdminSections());
 	}
 
@@ -184,7 +183,6 @@ class ManagerTest extends TestCase {
 			10 => [new Section('security', 'Security', 0, '3')],
 			45 => [new Section('encryption', 'Encryption', 0, '3')],
 			98 => [new Section('additional', 'Additional settings', 0, '1')],
-			99 => [new Section('tips-tricks', 'Tips & tricks', 0, '4')],
 		], $this->manager->getAdminSections());
 	}
 
